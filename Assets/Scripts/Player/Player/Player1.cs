@@ -23,7 +23,7 @@ public class Player1 : IMovemen
 
     public void MoveCalculate(GameObject player, float speed)
     {
-        player.GetComponent<Animator>().SetBool("Walking", true);
+        
         player.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 

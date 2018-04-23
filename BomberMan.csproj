@@ -78,9 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AllPropsData.cs" />
     <Compile Include="Assets\Scripts\Bomb\BeBomb.cs" />
     <Compile Include="Assets\Scripts\Bomb\CreatExplore.cs" />
     <Compile Include="Assets\Scripts\Bomb\ExitTrigger.cs" />
+    <Compile Include="Assets\Scripts\BombUp.cs" />
     <Compile Include="Assets\Scripts\Explore\ClearExplotion.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\Player\IMove\IMovement.cs" />
@@ -88,12 +90,7 @@
     <Compile Include="Assets\Scripts\Player\Player\Player2.cs" />
     <Compile Include="Assets\Scripts\Player\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\Player\PlayerSetBomb.cs" />
-    <Compile Include="Assets\prop.cs" />
-    <Compile Include="Assets\recv_prop.cs" />
-=======
->>>>>>> fede8bddbb503e013c0581171b4acfdcf94c51a1
+    <Compile Include="Assets\Scripts\SpeedUp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
