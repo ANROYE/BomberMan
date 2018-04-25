@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour {
         if (_instance == null)
         {
             _instance = this;
-        }else if(_instance != this){
-            Destroy(gameObject);
         }
         
 
@@ -118,7 +116,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     void _GameIsOver()
     {
-        StartCoroutine("OverShowMessage");
+        //StartCoroutine("OverShowMessage");
         
     }
 
@@ -148,10 +146,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    IEnumerator OverShowMessage()
-    {
-        yield return new WaitForSeconds(2f);
-        OverShow.text = "GameOver";
-    }
+    //IEnumerator OverShowMessage()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    OverShow.text = "GameOver";
+    //}
 
 }
