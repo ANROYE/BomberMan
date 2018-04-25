@@ -9,7 +9,9 @@ public class CreatExplore : MonoBehaviour {
     /// 
     /// <Author> Wumenghua </Author>
     /// </summary>
-    
+
+    public int boomRange = 2;
+
     public GameObject explore;
     public LayerMask LayerMask;
 
@@ -39,7 +41,7 @@ public class CreatExplore : MonoBehaviour {
 
 
         //十字爆炸
-        for (int i = 1;i<2; i++)
+        for (int i = 1;i< boomRange; i++)
         {
             Physics.Raycast(transform.position+new Vector3(0,0.5f,0), direction, out bombHit, i, LayerMask);            
            

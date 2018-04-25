@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
     public string PlayerName;
     public GameObject bomb;
     public float speed;
+    public bool isDie = false;
 
     private Animator animator;
 
@@ -20,12 +21,12 @@ public class PlayerController : MonoBehaviour {
         movemen = PlayerState.Movemen(PlayerName);
 
     }
-
-    private void FixedUpdate()
+    private void Update()
     {
-        animator.SetBool("Walking",false);
+        animator.SetBool("Walking", false);
         if (GameManager._instance._GetGameState() == GameManager.State.PLAY)
         {
+
             movemen.MoveForward(gameObject, speed);
             movemen.MoveBack(gameObject, speed);
             movemen.MoveLeft(gameObject, speed);
@@ -34,4 +35,10 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
+
+    private void OnDisable()
+    {
+        GameManager._instance.SetGameState(GameManager.State.GAMEOVER);
+    }
+
 }

@@ -12,5 +12,6 @@ public class ExitTrigger : MonoBehaviour {
         {
             gameObject.GetComponent<Collider>().isTrigger = false;
         }
+
     }
 }

@@ -20,10 +20,17 @@ public class BeBomb : MonoBehaviour {
 	}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Explosion"))
+        if (other.CompareTag("Box"))
         {
-            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
+        else if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerController>().isDie = true;
+            other.gameObject.SetActive(false);
+
+        }
+        
     }
 
 }
