@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     public string PlayerName;
 
-
+    public bool kicking = false;
 
 
     public GameObject bomb;//炸彈
@@ -68,5 +68,5 @@ public class PlayerController : MonoBehaviour {
     {
         GameManager._instance.SetGameState(GameManager.State.GAMEOVER);
     }
-
+    
 }
