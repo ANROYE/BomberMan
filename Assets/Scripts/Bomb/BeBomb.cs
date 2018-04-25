@@ -22,6 +22,7 @@ public class BeBomb : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Box"))
+
         {
             other.gameObject.SetActive(false);
         }
@@ -29,8 +30,12 @@ public class BeBomb : MonoBehaviour {
         {
             other.GetComponent<PlayerController>().isDie = true;
             other.gameObject.SetActive(false);
+
         }
+        
+
        
+
     }
     
         

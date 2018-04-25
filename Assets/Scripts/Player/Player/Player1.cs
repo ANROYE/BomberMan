@@ -3,7 +3,7 @@
 public class Player1 : IMovemen
 {
 
-    private void SetAni(GameObject player, bool start)
+    public void SetAnimator(GameObject player, bool start)
     {
         player.GetComponent<Animator>().SetBool("Walking", start);
     }
@@ -23,7 +23,7 @@ public class Player1 : IMovemen
 
     public void MoveCalculate(GameObject player, float speed)
     {
-        
+
         player.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -31,9 +31,9 @@ public class Player1 : IMovemen
     {
         if (Input.GetKey(KeyCode.S))
         {
-            SetAni(player, true);
             player.transform.rotation = Quaternion.Euler(0, 180, 0);
             MoveCalculate(player, speed);
+            SetAnimator(player, true);
         }
         
     }
@@ -42,9 +42,9 @@ public class Player1 : IMovemen
     {
         if (Input.GetKey(KeyCode.W))
         {
-            SetAni(player, true);
             player.transform.rotation = Quaternion.Euler(0,0,0);
             MoveCalculate(player, speed);
+            SetAnimator(player, true);
         }
         
     }
@@ -53,9 +53,9 @@ public class Player1 : IMovemen
     {
         if (Input.GetKey(KeyCode.A))
         {
-            SetAni(player, true);
             player.transform.rotation = Quaternion.Euler(0, -90, 0);
             MoveCalculate(player, speed);
+            SetAnimator(player, true);
         }
         
     }
@@ -64,9 +64,9 @@ public class Player1 : IMovemen
     {
         if (Input.GetKey(KeyCode.D))
         {
-            SetAni(player, true);
             player.transform.rotation = Quaternion.Euler(0, 90, 0);
             MoveCalculate(player, speed);
+            SetAnimator(player, true);
         }
         
     }

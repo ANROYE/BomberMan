@@ -5,12 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public string PlayerName;
+
+
+
+
     public GameObject bomb;//炸彈
     public float speed;//速度
     public bool isDie = false;//玩家死亡
     public bool acce= false;//加速
    
     
+
     private Animator animator;
 
     IMovemen movemen;
@@ -25,6 +30,7 @@ public class PlayerController : MonoBehaviour {
         movemen = PlayerState.Movemen(PlayerName);
 
     }
+
 
     private void Update()
     {
@@ -43,10 +49,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate()
+
     {
-        animator.SetBool("Walking",false);
+        animator.SetBool("Walking", false);
         if (GameManager._instance._GetGameState() == GameManager.State.PLAY)
         {
+
             movemen.MoveForward(gameObject, speed);
             movemen.MoveBack(gameObject, speed);
             movemen.MoveLeft(gameObject, speed);
@@ -55,10 +63,10 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
+
     private void OnDisable()
     {
         GameManager._instance.SetGameState(GameManager.State.GAMEOVER);
     }
 
-    
 }

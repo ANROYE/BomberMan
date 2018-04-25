@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public Text TimeTxt;
     public int CountTimer;
+    public Text OverShow;
 
     public static GameManager _instance;
 
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     void _DelayGame()
     {
+        OverShow.text = string.Empty;
         StartCoroutine(CountTime());
     }
 
@@ -98,7 +100,9 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     void _PlayimgTheGame()
     {
+        OverShow.text = string.Empty;
         TimeTxt.text = string.Empty;
+
     }
 
     /// <summary>
@@ -114,7 +118,8 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     void _GameIsOver()
     {
-
+        StartCoroutine("OverShowMessage");
+        
     }
 
 
@@ -124,9 +129,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     /// <returns></returns>
     IEnumerator CountTime()
-    {
-
-        
+    {      
         while (CountTimer>0)
         {
             TimeTxt.text = CountTimer + "";
@@ -145,5 +148,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    IEnumerator OverShowMessage()
+    {
+        yield return new WaitForSeconds(2f);
+        OverShow.text = "GameOver";
+    }
 
 }

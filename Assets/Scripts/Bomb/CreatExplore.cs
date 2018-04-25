@@ -9,11 +9,12 @@ public class CreatExplore : MonoBehaviour {
     /// 
     /// <Author> Wumenghua </Author>
     /// </summary>
-    
-    public GameObject explore;
-    public LayerMask LayerMask;
+
     public int boomRange = 2;
 
+    public GameObject explore;
+    public LayerMask LayerMask;
+   
     private float waitToBoom;
     private RaycastHit bombHit;
    
