@@ -14,8 +14,7 @@ public class CreatExplore : MonoBehaviour {
 
     public GameObject explore;
     public LayerMask LayerMask;
-    public int boomRange = 2;
-
+   
     private float waitToBoom;
     private RaycastHit bombHit;
    

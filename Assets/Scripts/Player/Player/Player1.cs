@@ -23,11 +23,7 @@ public class Player1 : IMovemen
 
     public void MoveCalculate(GameObject player, float speed)
     {
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> upstream/master
+
         player.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
