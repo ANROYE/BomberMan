@@ -11,15 +11,18 @@ public class CreatExplore : MonoBehaviour {
     /// </summary>
 
     public int boomRange = 2;
-
+    
     public GameObject explore;
     public LayerMask LayerMask;
    
     private float waitToBoom;
     private RaycastHit bombHit;
+
+    private bool explode = false;
    
     // Use this for initialization
     void Start () {
+        
         waitToBoom = 2.8f;
         StartCoroutine(Boom(Vector3.forward));
         StartCoroutine(Boom(Vector3.back));
@@ -62,15 +65,17 @@ public class CreatExplore : MonoBehaviour {
         Destroy(gameObject);        
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!explore && other.CompareTag("Explosion"))
-        { //如果還沒有爆炸，並且這枚炸彈受到爆炸襲擊
-            StopAllCoroutines(); //取消已經叫做的爆炸，否則炸彈可能爆炸兩次
+        if (other.CompareTag("Explosion"))
+        {
+            waitToBoom = 0;
             StartCoroutine(Boom(Vector3.forward));
             StartCoroutine(Boom(Vector3.back));
             StartCoroutine(Boom(Vector3.right));
-            StartCoroutine(Boom(Vector3.left));//最後爆炸!
+            StartCoroutine(Boom(Vector3.left));
         }
     }
+
+
 }
