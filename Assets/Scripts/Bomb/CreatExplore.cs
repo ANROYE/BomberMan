@@ -14,6 +14,7 @@ public class CreatExplore : MonoBehaviour {
 
     public GameObject explore;
     public LayerMask LayerMask;
+    public int boomRange = 2;
 
     private float waitToBoom;
     private RaycastHit bombHit;
@@ -26,6 +27,7 @@ public class CreatExplore : MonoBehaviour {
         StartCoroutine(Boom(Vector3.right));
         StartCoroutine(Boom(Vector3.left));
     }
+
 
     /// <summary>
     /// This IEnumerator is use to raycast direction
@@ -54,9 +56,22 @@ public class CreatExplore : MonoBehaviour {
             {
                 break;
             }
+
             
         }
         yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);        
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (!explore && other.CompareTag("Explosion"))
+        { //如果還沒有爆炸，並且這枚炸彈受到爆炸襲擊
+            StopAllCoroutines(); //取消已經叫做的爆炸，否則炸彈可能爆炸兩次
+            StartCoroutine(Boom(Vector3.forward));
+            StartCoroutine(Boom(Vector3.back));
+            StartCoroutine(Boom(Vector3.right));
+            StartCoroutine(Boom(Vector3.left));//最後爆炸!
+        }
     }
 }

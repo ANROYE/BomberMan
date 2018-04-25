@@ -1,12 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
     public string PlayerName;
+<<<<<<< HEAD
     public GameObject bomb;
     public float speed;
     public bool isDie = false;
 
+=======
+    public GameObject bomb;//炸彈
+    public float speed;//速度
+    public bool isDie = false;//玩家死亡
+    public bool acce= false;//加速
+   
+    
+>>>>>>> upstream/master
     private Animator animator;
 
     IMovemen movemen;
@@ -21,7 +32,28 @@ public class PlayerController : MonoBehaviour {
         movemen = PlayerState.Movemen(PlayerName);
 
     }
+<<<<<<< HEAD
     private void Update()
+=======
+
+    private void Update()
+    {
+        if (acce) {
+            StartCoroutine(InitSpeed());
+        }
+    }
+
+    
+
+    IEnumerator InitSpeed()
+    {
+        yield return new WaitForSeconds(5f);
+        speed = 2.5f;
+        StopCoroutine(InitSpeed());
+    }
+
+    private void FixedUpdate()
+>>>>>>> upstream/master
     {
         animator.SetBool("Walking", false);
         if (GameManager._instance._GetGameState() == GameManager.State.PLAY)
@@ -35,10 +67,17 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     private void OnDisable()
     {
         GameManager._instance.SetGameState(GameManager.State.GAMEOVER);
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> upstream/master
 }

@@ -242,7 +242,11 @@
     <Compile Include="Assets\Scripts\Bomb\BeBomb.cs" />
     <Compile Include="Assets\Scripts\Bomb\CreatExplore.cs" />
     <Compile Include="Assets\Scripts\Bomb\ExitTrigger.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\BombRangUpdate.cs" />
+=======
+    <Compile Include="Assets\Scripts\BombUp.cs" />
+>>>>>>> upstream/master
     <Compile Include="Assets\Scripts\Explore\ClearExplotion.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\Player\IMove\IMovement.cs" />
@@ -250,6 +254,10 @@
     <Compile Include="Assets\Scripts\Player\Player\Player2.cs" />
     <Compile Include="Assets\Scripts\Player\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scripts\SpeedUp.cs" />
+>>>>>>> upstream/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
