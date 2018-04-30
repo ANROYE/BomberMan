@@ -238,16 +238,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CreatProp.cs" />
     <Compile Include="Assets\Scripts\AllPropsData.cs" />
     <Compile Include="Assets\Scripts\Bomb\BeBomb.cs" />
     <Compile Include="Assets\Scripts\Bomb\CreatExplore.cs" />
     <Compile Include="Assets\Scripts\Bomb\ExitTrigger.cs" />
+    <Compile Include="Assets\Scripts\CreatProp.cs" />
     <Compile Include="Assets\Scripts\Effect\BombUp.cs" />
     <Compile Include="Assets\Scripts\Effect\Kickbomb.cs" />
     <Compile Include="Assets\Scripts\Effect\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Explore\ClearExplotion.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Player\DoKick.cs" />
     <Compile Include="Assets\Scripts\Player\Player\IMove\IMovement.cs" />
     <Compile Include="Assets\Scripts\Player\Player\Player1.cs" />
     <Compile Include="Assets\Scripts\Player\Player\Player2.cs" />

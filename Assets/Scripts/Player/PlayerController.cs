@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour {
     public bool isDie = false;//玩家死亡
     public bool acce= false;//加速
     public bool kicking = false;
-   
-    
 
     private Animator animator;
 
@@ -28,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         movemen = PlayerState.Movemen(PlayerName);
-
+        
     }
 
 
@@ -37,6 +35,7 @@ public class PlayerController : MonoBehaviour {
         if (acce) {
             StartCoroutine(InitSpeed());
         }
+        
     }
 
     
@@ -69,7 +68,6 @@ public class PlayerController : MonoBehaviour {
         GameManager._instance.SetGameState(GameManager.State.GAMEOVER);
     }
 
+    
 
-    
-    
 }

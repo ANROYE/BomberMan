@@ -24,11 +24,13 @@ public class BeBomb : MonoBehaviour {
         if (other.CompareTag("Box"))
 
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+            //other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().isDie = true;
+           
             other.gameObject.SetActive(false);
 
         }

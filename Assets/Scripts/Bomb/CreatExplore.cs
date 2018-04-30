@@ -10,7 +10,7 @@ public class CreatExplore : MonoBehaviour {
     /// <Author> Wumenghua </Author>
     /// </summary>
 
-    public int boomRange = 2;
+    public int boomRange;
     
     public GameObject explore;
     public LayerMask LayerMask;
@@ -22,7 +22,7 @@ public class CreatExplore : MonoBehaviour {
    
     // Use this for initialization
     void Start () {
-        
+        boomRange = 2;
         waitToBoom = 2.8f;
         StartCoroutine(Boom(Vector3.forward));
         StartCoroutine(Boom(Vector3.back));
