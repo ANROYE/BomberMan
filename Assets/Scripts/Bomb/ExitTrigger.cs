@@ -6,13 +6,18 @@ public class ExitTrigger : MonoBehaviour {
     ///So the player can not cross the bomb
     /// <Author> Wumenghua </Author>
     /// </summary>
+    /// 
+
     private void OnTriggerExit(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             gameObject.GetComponent<Collider>().isTrigger = false;
         }
+
+        
     }
 
-   
+
 }

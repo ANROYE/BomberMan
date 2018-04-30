@@ -12,10 +12,12 @@ public class Player2 : IMovemen
     {
         if (Input.GetKeyDown(KeyCode.Keypad0))
         {
-            Object.Instantiate(bomb,
-             new Vector3(Mathf.RoundToInt(player.transform.position.x), 
-             player.transform.position.y, 
-             Mathf.RoundToInt(player.transform.position.z)), player.transform.rotation);
+
+                Object.Instantiate(bomb,
+                 new Vector3(Mathf.RoundToInt(player.transform.position.x),
+                 player.transform.position.y,
+                 Mathf.RoundToInt(player.transform.position.z)), player.transform.rotation);
+
         }
     }
 

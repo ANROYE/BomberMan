@@ -25,7 +25,8 @@ public class AllPropsData : MonoBehaviour
         for (int i = 0; i < index.Length; i++)
         {
             index[i] = UnityEngine.Random.Range(0,box.Length);
-            box[index[i]].AddComponent<CreatProp>();
+            
+            box[index[i]].gameObject.AddComponent<CreatProp>();
         }
         
     }

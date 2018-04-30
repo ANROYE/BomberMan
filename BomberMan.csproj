@@ -238,6 +238,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\RebounceBomb.cs" />
     <Compile Include="Assets\Scripts\AllPropsData.cs" />
     <Compile Include="Assets\Scripts\Bomb\BeBomb.cs" />
     <Compile Include="Assets\Scripts\Bomb\CreatExplore.cs" />
