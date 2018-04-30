@@ -1,34 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AllPropsData : MonoBehaviour
 {
 
+    private GameObject[] box;
 
-    //1.炸彈數量 2.炸彈範圍 3.走路速度
-    
-    
-
-
-
-    /*
-     * 1.爆炸範圍   OK
-     * 2.走路速度   OK
-     * 3.踹炸彈
-     */
+    private void Awake()
+    {
+        box = GameObject.FindGameObjectsWithTag("Box");
+    }
 
     // Use this for initialization
     void Start()
     {
-
+        RandomCreat();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RandomCreat()
     {
-
+        int[] index = new int[box.Length * (1/3)];
+        for (int i = 0; i < index.Length; i++)
+        {
+            index[i] = UnityEngine.Random.Range(0,box.Length);
+            box[index[i]].AddComponent<CreatProp>();
+        }
+        
     }
+
+   
 
     
 }
