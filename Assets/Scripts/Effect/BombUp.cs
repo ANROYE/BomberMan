@@ -16,9 +16,10 @@ public class BombUp : MonoBehaviour {
     void OnTriggerEnter(Collider other)//other指的是碰撞點
     {
 
-        if (other.tag == "Player")//玩家與道具碰撞檢測
+        if (other.CompareTag("Player"))//玩家與道具碰撞檢測
         {
-            bomb.gameObject.GetComponent<CreatExplore>().boomRange = 6;
+            //bomb.gameObject.GetComponent<CreatExplore>().boomRange = 6;
+            other.gameObject.GetComponent<PlayerController>().bombRange = 6;
             Destroy(gameObject);   //道具從場景消失  
 
         }

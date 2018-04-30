@@ -24,8 +24,8 @@ public class BeBomb : MonoBehaviour {
         if (other.CompareTag("Box"))
 
         {
-            Destroy(other.gameObject);
-            //other.gameObject.SetActive(false);
+            //Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("Player"))
         {

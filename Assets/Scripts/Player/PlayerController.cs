@@ -9,10 +9,11 @@ public class PlayerController : MonoBehaviour {
 
 
     public GameObject bomb;//炸彈
-    public float speed;//速度
     public bool isDie = false;//玩家死亡
     public bool acce= false;//加速
     public bool kicking = false;
+    public float speed;//速度
+    public int bombRange = 2;
 
     private Animator animator;
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
     {
         yield return new WaitForSeconds(5f);
         speed = 2.5f;
+        acce = false;
         StopCoroutine(InitSpeed());
     }
 

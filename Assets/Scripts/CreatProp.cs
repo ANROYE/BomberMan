@@ -12,14 +12,14 @@ public class CreatProp : MonoBehaviour {
 
     private void Awake()
     {
-        randomEnable = Random.Range(0,3);
+        randomEnable = Random.Range(0,6);
     }
     // Use this for initialization
     void Start () {
         
         pos =transform.position;
         quaternion = Quaternion.Euler(0,0,0);
-        if (randomEnable == 1)
+        if (randomEnable %2 ==0)
         {
             enabled = true;
         }
@@ -34,21 +34,18 @@ public class CreatProp : MonoBehaviour {
 		
 	}
 
-    private void OnDestroy()
+
+
+    private void OnDisable()
     {
+
         if (enabled == true)
         {
-
+   
             int i = Random.Range(0, 3);
             Instantiate(prop[i], pos, quaternion);
         }
-        else
-            return;
+         else
+             return;
     }
-
-    //private void OnDisable()
-    //{
-    //    
-    //   Instantiate(prop);
-    //}
 }
