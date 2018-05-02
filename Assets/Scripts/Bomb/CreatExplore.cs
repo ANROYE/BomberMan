@@ -11,7 +11,8 @@ public class CreatExplore : MonoBehaviour {
     /// </summary>
 
     public int boomRange;
-    
+    private string playerName;
+
     public GameObject explore;
     public LayerMask LayerMask;
     public bool canBounce = false;
@@ -20,11 +21,13 @@ public class CreatExplore : MonoBehaviour {
     private Vector3 direction;//方向
 
     private bool explode = false;
-   
+
+    BombUp bu = new BombUp();
     // Use this for initialization
     void Start () {
-        boomRange = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bombRange;
-        waitToBoom = 2.8f;
+     
+        boomRange = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bombRange;       
+        waitToBoom = 3;
         StartCoroutine(Boom(Vector3.forward));
         StartCoroutine(Boom(Vector3.back));
         StartCoroutine(Boom(Vector3.right));
@@ -89,15 +92,17 @@ public class CreatExplore : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         //亂數成立，才會反彈
-        if (collision.gameObject.CompareTag("Box") /*&& 牆壁 && 亂數成立*/)
+        int rand = Random.Range(1,4);
+        if ((collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Block")) && rand == 3 /*&& 亂數成立*/)
         {
             
-            gameObject.GetComponent<Rigidbody>().AddForce(direction * 200);
+            gameObject.GetComponent<Rigidbody>().AddForce(direction * 200, ForceMode.Force);
         }
         else
             return;
     }
 
+    
     private void OnDisable()
     {
         Destroy(gameObject,4);

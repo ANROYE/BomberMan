@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public bool isDie = false;//玩家死亡
     public bool acce= false;//加速
     public bool kicking = false;
+    public bool bombUp = false;
     public float speed;//速度
     public int bombRange = 2;
 
@@ -63,6 +64,11 @@ public class PlayerController : MonoBehaviour {
             movemen.SetBomb(gameObject, bomb);
 
         }
+    }
+
+    public string GetName()
+    {
+        return PlayerName;
     }
 
     private void OnDisable()
