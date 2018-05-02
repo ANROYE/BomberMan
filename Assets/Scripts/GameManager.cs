@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     void _GameIsOver()
     {
-        //StartCoroutine("OverShowMessage");
+        StartCoroutine("OverShowMessage");
         
     }
 
@@ -146,10 +146,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    //IEnumerator OverShowMessage()
-    //{
-    //    yield return new WaitForSeconds(2f);
-    //    OverShow.text = "GameOver";
-    //}
+    IEnumerator OverShowMessage()
+    {
+        yield return new WaitForSeconds(2f);
+        OverShow.text = "GameOver";
+    }
 
 }

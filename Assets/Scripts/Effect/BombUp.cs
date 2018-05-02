@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BombUp : MonoBehaviour {
     public GameObject bomb;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,13 +16,13 @@ public class BombUp : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)//other指的是碰撞點
     {
-
+        
+        
         if (other.CompareTag("Player"))//玩家與道具碰撞檢測
         {
-            //bomb.gameObject.GetComponent<CreatExplore>().boomRange = 6;
+                           
             other.gameObject.GetComponent<PlayerController>().bombRange = 6;
             Destroy(gameObject);   //道具從場景消失  
-
         }
     }
 }
