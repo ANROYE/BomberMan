@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-  
-    /// <summary>
-    /// This class is Game Manager to control all the event in the Game
-    /// 
-    /// <Author> Wumenghua </Author>
-    /// </summary>
+
+         /// <summary>
+         ///這個方法是Game Manager來控制遊戲中的所有事件
+        ///
+         /// <Author> Wumenghua </ Author>
+         /// </ summary>
 
     public Text TimeTxt;
     public int CountTimer;
@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour {
 
 
 
-    /// <summary>
-    /// State enum with this Game State
-    /// </summary>
+         /// <summary>
+         ///用這個遊戲狀態列舉
+         /// </ summary>
     public enum State
     {
         DELAY,
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator OverShowMessage()
     {
         yield return new WaitForSeconds(2f);
-        OverShow.text = "GameOver";
+        OverShow.text = "GameOVer";
     }
 
 }

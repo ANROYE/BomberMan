@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class CreatExplore : MonoBehaviour {
     /// <summary>
-    ///This class is creat explore when the bomb set active be false
-    /// 
-    /// <Author> Wumenghua </Author>
-    /// </summary>
+         ///當炸彈設置為假時，這個方法是創造性的探索
+        ///
+         /// <Author> Wumenghua </ Author>
+         /// </ summary>
 
     public int boomRange;
     private string playerName;
@@ -23,7 +23,7 @@ public class CreatExplore : MonoBehaviour {
     private bool explode = false;
 
     BombUp bu = new BombUp();
-    // Use this for initialization
+    
     void Start () {
      
         boomRange = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bombRange;       
@@ -35,12 +35,12 @@ public class CreatExplore : MonoBehaviour {
     }
 
 
-    /// <summary>
-    /// This IEnumerator is use to raycast direction
-    /// 
-    /// </summary>
-    /// <param name="direction"></param>
-    /// <returns></returns>
+        /// <summary>
+         ///此IEnumerator用於光線投射方向
+        ///
+         /// </ summary>
+         /// <param name =“direction”> </ param>
+         /// <returns> </ returns>
     IEnumerator Boom(Vector3 direction)
     {
        

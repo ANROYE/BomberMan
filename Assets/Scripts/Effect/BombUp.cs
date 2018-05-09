@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombUp : MonoBehaviour {
+public class BombUp : MonoBehaviour { 
     public GameObject bomb;
 
-	// Use this for initialization
-	void Start () {
+    /// <summary>
+         ///這個方法用於當玩家吃到這個道具，就可以加強炸彈的威力
+        ///
+         /// <Author> Wumenghua </ Author>
+         /// </ summary>
+
+
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
@@ -21,7 +26,7 @@ public class BombUp : MonoBehaviour {
         if (other.CompareTag("Player"))//玩家與道具碰撞檢測
         {
                            
-            other.gameObject.GetComponent<PlayerController>().bombRange = 6;
+            other.gameObject.GetComponent<PlayerController>().bombRange = 6;//使炸彈的威力為6，預設為2
             Destroy(gameObject);   //道具從場景消失  
         }
     }

@@ -13,7 +13,7 @@ public class AllPropsData : MonoBehaviour
         box = GameObject.FindGameObjectsWithTag("Box");
     }
 
-    // Use this for initialization
+ 
     void Start()
     {
         RandomCreat();

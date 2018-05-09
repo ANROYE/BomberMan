@@ -14,7 +14,7 @@ public class CreatProp : MonoBehaviour {
     {
         randomEnable = Random.Range(0,6);
     }
-    // Use this for initialization
+   
     void Start () {
         
         pos =transform.position;
@@ -29,7 +29,6 @@ public class CreatProp : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
